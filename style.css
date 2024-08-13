@@ -1,0 +1,367 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* Light, subtle background color */
+    color: #ffffff; /* Dark text color for good contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(perya.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    position: relative;
+    min-height: 100vh; /* Ensures the body covers the entire viewport height */
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.5rem;
+    color: #f9a825; /* Gold color for the title */
+    margin-bottom: 20px;
+    text-transform: uppercase; /* All caps for the title */
+    letter-spacing: 2px; /* Space between letters */
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(45deg, #ffd700, #f1c40f, #f39c12, #e67e22); /* Multi-color gradient for a carnival feel */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px; /* Padding around the text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 215, 0, 0.7); /* Enhanced shadow for a glowing effect */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation for carnival lights effect */
+@keyframes carnivalLights {
+    0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+/* Apply the animation */
+h1 {
+    animation: carnivalLights 1.5s infinite; /* Continuous light animation */
+}
+
+/* Popup window background */
+.popup {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    z-index: 9999; /* Ensure it is on top of other elements */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding to ensure content doesn't touch edges */
+    box-sizing: border-box;
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    position: relative;
+    max-width: 90%; /* Responsive width */
+    width: 300px; /* Default width */
+}
+
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    bottom: 15px; /* Positioned at the bottom of the popup */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 10px 20px;
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 25px; /* Fully rounded button */
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* "You win!" text */
+h2 {
+    font-size: 1.75rem; /* Responsive font size */
+    color: #27ae60; /* Green color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Input container styling */
+div {
+    margin-bottom: 20px; /* Space between input sections */
+    text-align: center; /* Center align for mobile view */
+}
+
+/* Label styling */
+label {
+    font-size: 1rem; /* Responsive font size */
+    margin-right: 10px;
+    color: #ffffff; /* Light color for labels */
+}
+
+/* Input field styling */
+input[type="number"] {
+    padding: 10px;
+    font-size: 1rem; /* Responsive font size */
+    border: 2px solid #bdc3c7; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    width: 200px; /* Fixed width for consistency */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input focus styling */
+input[type="number"]:focus {
+    border-color: #2980b9; /* Change border color on focus */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhance shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+button {
+    padding: 12px 24px;
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text */
+    font-size: 1rem; /* Responsive font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* All caps for the button */
+    letter-spacing: 1px; /* Space between letters */
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: red; /* Darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Dice container styling */
+.dice-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow dice to wrap on smaller screens */
+}
+
+/* Dice styling */
+.dice {
+    width: 80px; /* Smaller width for responsive design */
+    height: 80px; /* Smaller height for responsive design */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; /* Responsive font size */
+    font-weight: bold;
+    color: #fff;
+    animation: roll 1s ease-out;
+}
+
+/* Dice colors */
+.dice.green { background-color: green; }
+.dice.red { background-color: red; }
+.dice.blue { background-color: blue; }
+.dice.white { background-color: white; color: black; }
+.dice.yellow { background-color: yellow; color: black; }
+.dice.black { background-color: black; }
+
+/* Animation for rolling dice */
+@keyframes roll {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Button roll dice styling */
+.btn-roll-dice {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* White text */
+    background: linear-gradient(45deg, #6a1b9a, #f9a825); /* Gradient from purple to gold */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase; /* All caps for consistency */
+    letter-spacing: 1px; /* Space between letters */
+    animation: bounce 1s ease infinite; /* Apply bounce animation */
+}
+
+.btn-roll-dice:hover {
+    background: linear-gradient(45deg, #7e57c2, #fbc02d); /* Slightly lighter gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    animation: none; /* Remove bounce animation on hover */
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Scale up */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}
+
+/* Color tiles container */
+.color-result {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20%;
+    flex-wrap: wrap; /* Allow color tiles to wrap on smaller screens */
+}
+
+/* Color tile styling */
+.color-tile {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.021);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Color tile colors */
+.color-tile.green { background-color: green; }
+.color-tile.red { background-color: red; }
+.color-tile.blue { background-color: blue; }
+.color-tile.white { background-color: white; color: black; }
+.color-tile.yellow { background-color: yellow; color: black; }
+.color-tile.black { background-color: black; }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 2.25rem; /* Slightly smaller font size for larger tablets and desktops */
+    }
+
+    .popup-content {
+        width: 80%; /* Increase width for larger screens */
+    }
+
+    .dice {
+        width: 70px; /* Adjust dice size for large tablets and smaller desktops */
+        height: 70px;
+        font-size: 1.1rem; /* Slightly smaller font size */
+    }
+
+    input[type="number"] {
+        width: 180px; /* Adjust width for large tablets and smaller desktops */
+    }
+
+    button {
+        font-size: 15px; /* Slightly smaller font size for large tablets and desktops */
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2rem; /* Adjust font size for tablets */
+    }
+
+    .popup-content {
+        width: 85%; /* Increase width for smaller tablets and larger phones */
+    }
+
+    .dice {
+        width: 60px; /* Adjust size for tablets */
+        height: 60px;
+        font-size: 1rem; /* Adjust font size for tablets */
+    }
+
+    input[type="number"] {
+        width: 160px; /* Adjust width for tablets */
+    }
+
+    button {
+        font-size: 14px; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem; /* Adjust font size for smaller tablets and large phones */
+    }
+
+    .popup-content {
+        width: 90%; /* Increase width for smaller phones */
+    }
+
+    .dice {
+        width: 50px; /* Smaller size for phones */
+        height: 50px;
+        font-size: 0.9rem; /* Smaller font size for phones */
+    }
+
+    input[type="number"] {
+        width: 140px; /* Adjust width for phones */
+    }
+
+    button {
+        font-size: 13px; /* Smaller font size for phones */
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem; /* Adjust font size for very small screens */
+    }
+
+    .popup-content {
+        width: 95%; /* Maximize width for very small screens */
+    }
+
+    .dice {
+        width: 40px; /* Smaller size for very small screens */
+        height: 40px;
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
+
+    input[type="number"] {
+        width: 120px; /* Adjust width for very small screens */
+    }
+
+    button {
+        font-size: 12px; /* Smaller font size for very small screens */
+    }
+}
