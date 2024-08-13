@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Dice Game</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Favicons -->
+    <link href="logo.png" rel="icon">
+    <link href="logo.png" rel="apple-touch-icon">
 </head>
 <body>
     <h1>Color Dice Game</h1>
     <div>
         <label for="pocketMoney">Enter your pocket money: $</label>
-        <input type="number" id="pocketMoney" min="1" value="100">
+        <input type="number" id="pocketMoney" min="1" value="100" onchange="updatePocketMoney()">
     </div>
     <div>
         <label for="betAmount">Enter your bet amount: $</label>
         <input type="number" id="betAmount" min="1">
     </div>
+    <div id="pocketMoneyDisplay">Current Pocket Money: $100</div>
     <div>
         <label for="colorChoice">Choose a color:</label>
         <select id="colorChoice">
